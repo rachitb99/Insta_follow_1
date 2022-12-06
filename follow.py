@@ -23,7 +23,13 @@ to_follow = [x for x in recommendations if x not in followed]
 # Username - mlnc_confessions_
 # Password - MLAconfess@
 
-driver = webdriver.Chrome()
+from selenium.webdriver import FirefoxOptions
+
+opts = FirefoxOptions()
+opts.add_argument("--headless")
+
+
+driver = webdriver.Firefox(options=opts)
 
 driver.get("http://www.instagram.com")
 
